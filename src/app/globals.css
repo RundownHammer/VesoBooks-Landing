@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../styles/tokens.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+Button:hover{
+  cursor: pointer;
+}
+
+.tabular-nums {
+  font-family: var(--font-geist-mono), "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", monospace;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom styles for the landing page */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.font-inter {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-geist-mono {
+  font-family: var(--font-geist-mono), "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", monospace;
+}
+
+.font-instrument-serif {
+  font-family: var(--font-instrument-serif);
+  font-display: swap;
+}
+
+/* Added explicit font loading optimization */
+@supports (font-display: swap) {
+  @font-face {
+    font-family: "Instrument Serif";
+    font-display: swap;
+  }
+}
+
+.mix-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+.backdrop-blur-custom {
+  backdrop-filter: blur(8.25px);
+}
+
+.cta-pattern {
+  background-color: rgba(247, 245, 243, 0.72);
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 7px,
+    rgba(3, 7, 18, 0.08) 7px,
+    rgba(3, 7, 18, 0.08) 8px
+  );
+}
+
+@media (max-width: 640px) {
+  .landing-shell {
+    width: 100%;
+    overflow-x: clip;
+  }
+
+  .landing-shell .landing-hero {
+    min-height: auto;
+  }
+
+  .landing-shell .landing-hero img {
+    max-width: none;
+  }
+
+  .landing-shell .feature-card-list > *,
+  .landing-shell .bento-grid > * {
+    min-width: 0;
+  }
+
+  .landing-shell .bento-grid p {
+    max-width: 34rem;
+  }
+
+  .cta-pattern {
+    background-size: 11px 11px;
+  }
+}

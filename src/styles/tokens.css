@@ -1,0 +1,450 @@
+/**
+ * VesoBooks Machine-Enforced Design Tokens
+ * Single Source of Truth for Tailwind v4 and CSS Custom Properties.
+ * Strictly mirrors docs/DESIGN_SYSTEM.md
+ */
+
+:root {
+  /* Core Geometry Anchor */
+  --radius: 0.375rem;
+
+  /* Surface & Canvas Tokens */
+  --background: #f4f4f5;
+  --foreground: #2a303d;
+  --card: #ffffff;
+  --card-foreground: #2a303d;
+  --popover: #ffffff;
+  --popover-foreground: #2a303d;
+
+  /* Primary Action */
+  --primary: #27272a;
+  --primary-foreground: #ffffff;
+  --primary-hover: #3f3f46;
+
+  /* Secondary & Muted */
+  --secondary: #f4f4f5;
+  --secondary-foreground: #27272a;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #27272a;
+
+  /* Destructive */
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  /* Borders, Inputs & Focus */
+  --border: rgba(9, 9, 11, 0.15);
+  --input: rgba(9, 9, 11, 0.15);
+  --ring: #27272a;
+
+  /* Sidebar */
+  --sidebar: #27272a;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-border: #3f3f46;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #18181b;
+  --sidebar-accent: #323236;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-ring: #ffffff;
+
+  /* Canonical Semantic Status Colors */
+  --status-success: #22c55e;
+  --status-success-bg: #def6e7;
+  --status-success-border: #bbf7d0;
+
+  --status-danger: #ef4444;
+  --status-danger-bg: #fde3e3;
+  --status-danger-border: #fecaca;
+
+  --status-warning: #eab308;
+  --status-warning-bg: #fef9c3;
+  --status-warning-border: #fef08a;
+
+  --status-info: #2176ff;
+  --status-info-bg: #deebff;
+  --status-info-border: #bfdbfe;
+
+  --status-neutral: #b1b1b8;
+  --status-neutral-bg: #f1f1f2;
+  --status-neutral-border: #e4e4e7;
+
+  /* Strong text variants — standalone semantic text on neutral surfaces
+     (white cards, table rows). The base status colors are tuned for
+     badge interiors (tinted bg + border + text triple); these darker
+     shades meet WCAG AA (4.5:1) for small text on card surfaces. */
+  --status-success-text-strong: #15803d;
+  --status-danger-text-strong: #b91c1c;
+  --status-warning-text-strong: #a16207;
+  --status-info-text-strong: #1d4ed8;
+
+  /* Chart Colors — theme-aware accent token */
+  --chart-1: var(--primary);
+  --chart-2: #3b82f6;
+  --chart-3: #10b981;
+  --chart-4: #f59e0b;
+  --chart-5: #ec4899;
+
+  /* Fonts */
+  --font-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-geist-mono: "Geist Mono", SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --font-instrument-serif: "Instrument Serif", Georgia, serif;
+}
+
+.dark {
+  --background: #121214;
+  --foreground: #f4f4f5;
+  --card: #18181b;
+  --card-foreground: #f4f4f5;
+  --popover: #18181b;
+  --popover-foreground: #f4f4f5;
+
+  --primary: #f4f4f5;
+  --primary-foreground: #18181b;
+  --primary-hover: #e4e4e7;
+
+  --secondary: #27272a;
+  --secondary-foreground: #f4f4f5;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
+  --accent-foreground: #f4f4f5;
+
+  --destructive: #f87171;
+  --destructive-foreground: #ffffff;
+
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #a1a1aa;
+
+  --sidebar: #18181b;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-border: #27272a;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #18181b;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-ring: #ffffff;
+
+  --status-success: #34d399;
+  --status-success-bg: rgba(34, 197, 94, 0.15);
+  --status-success-border: rgba(34, 197, 94, 0.3);
+
+  --status-danger: #f87171;
+  --status-danger-bg: rgba(239, 68, 68, 0.15);
+  --status-danger-border: rgba(239, 68, 68, 0.3);
+
+  --status-warning: #facc15;
+  --status-warning-bg: rgba(234, 179, 8, 0.15);
+  --status-warning-border: rgba(234, 179, 8, 0.3);
+
+  --status-info: #60a5fa;
+  --status-info-bg: rgba(33, 118, 255, 0.15);
+  --status-info-border: rgba(33, 118, 255, 0.3);
+
+  --status-neutral: #a1a1aa;
+  --status-neutral-bg: rgba(161, 161, 170, 0.15);
+  --status-neutral-border: rgba(161, 161, 170, 0.3);
+
+  /* Strong text variants — dark mode: brighter saturated shades for
+     standalone semantic text on dark card surfaces. */
+  --status-success-text-strong: #4ade80;
+  --status-danger-text-strong: #f87171;
+  --status-warning-text-strong: #facc15;
+  --status-info-text-strong: #93c5fd;
+
+  /* Chart Colors — dark mode theme-aware accent token */
+  --chart-1: var(--primary);
+  --chart-2: #60a5fa;
+  --chart-3: #34d399;
+  --chart-4: #fbbf24;
+  --chart-5: #f472b6;
+}
+
+/* ==========================================================================
+   Theme Presets — Accent Color Overrides
+   Mapped to data-theme-preset attribute on <html> or container
+   ========================================================================== */
+
+:root[data-theme-preset="blue"],
+[data-theme-preset="blue"] {
+  --primary: #2176ff;
+  --primary-foreground: #ffffff;
+  --primary-hover: #1b63db;
+  --ring: #2176ff;
+}
+
+:root[data-theme-preset="minimal"],
+[data-theme-preset="minimal"] {
+  --primary: #27272a;
+  --primary-foreground: #ffffff;
+  --primary-hover: #3f3f46;
+  --ring: #27272a;
+}
+
+:root[data-theme-preset="violet"],
+[data-theme-preset="violet"] {
+  --primary: #7c3aed;
+  --primary-foreground: #ffffff;
+  --primary-hover: #6d28d9;
+  --ring: #7c3aed;
+}
+
+:root[data-theme-preset="green"],
+[data-theme-preset="green"] {
+  --primary: #16a34a;
+  --primary-foreground: #ffffff;
+  --primary-hover: #15803d;
+  --ring: #16a34a;
+}
+
+.dark[data-theme-preset="blue"],
+.dark [data-theme-preset="blue"],
+.dark[data-theme-preset="blue"] aside,
+.dark aside[data-theme-preset="blue"] {
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --primary-hover: #60a5fa;
+  --ring: #3b82f6;
+}
+
+.dark[data-theme-preset="minimal"],
+.dark [data-theme-preset="minimal"],
+.dark[data-theme-preset="minimal"] aside,
+.dark aside[data-theme-preset="minimal"] {
+  --primary: #f4f4f5;
+  --primary-foreground: #18181b;
+  --primary-hover: #e4e4e7;
+  --ring: #f4f4f5;
+}
+
+.dark[data-theme-preset="violet"],
+.dark [data-theme-preset="violet"],
+.dark[data-theme-preset="violet"] aside,
+.dark aside[data-theme-preset="violet"] {
+  --primary: #8b5cf6;
+  --primary-foreground: #ffffff;
+  --primary-hover: #a78bfa;
+  --ring: #8b5cf6;
+}
+
+.dark[data-theme-preset="green"],
+.dark [data-theme-preset="green"],
+.dark[data-theme-preset="green"] aside,
+.dark aside[data-theme-preset="green"] {
+  --primary: #22c55e;
+  --primary-foreground: #ffffff;
+  --primary-hover: #4ade80;
+  --ring: #22c55e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-status-success: var(--status-success);
+  --color-status-success-bg: var(--status-success-bg);
+  --color-status-success-border: var(--status-success-border);
+
+  --color-status-danger: var(--status-danger);
+  --color-status-danger-bg: var(--status-danger-bg);
+  --color-status-danger-border: var(--status-danger-border);
+
+  --color-status-warning: var(--status-warning);
+  --color-status-warning-bg: var(--status-warning-bg);
+  --color-status-warning-border: var(--status-warning-border);
+
+  --color-status-info: var(--status-info);
+  --color-status-info-bg: var(--status-info-bg);
+  --color-status-info-border: var(--status-info-border);
+
+  --color-status-neutral: var(--status-neutral);
+  --color-status-neutral-bg: var(--status-neutral-bg);
+  --color-status-neutral-border: var(--status-neutral-border);
+
+  --color-status-success-text-strong: var(--status-success-text-strong);
+  --color-status-danger-text-strong: var(--status-danger-text-strong);
+  --color-status-warning-text-strong: var(--status-warning-text-strong);
+  --color-status-info-text-strong: var(--status-info-text-strong);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Typography Scale */
+  --text-3xs: 0.5625rem;
+  --text-3xs--line-height: 0.75rem;
+  --text-2xs: 0.625rem;
+  --text-2xs--line-height: 0.875rem;
+  --text-xs: 0.6875rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.75rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.25rem;
+
+  /* Font Family Aliases */
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --font-geist-mono: var(--font-geist-mono), SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+
+  /* Radius Tokens */
+  --radius-none: 0px;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+@layer components {
+  /* Primary Button Utility */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-weight: 500;
+    color: var(--primary-foreground);
+    background-color: var(--primary);
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background-color: var(--primary-hover);
+  }
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+  .btn-primary:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  /* Semantic Status Badge Utilities */
+  .badge-status-success {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: var(--radius-md);
+    border-width: 1px;
+    border-color: var(--status-success-border);
+    background-color: var(--status-success-bg);
+    color: var(--status-success);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .badge-status-danger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: var(--radius-md);
+    border-width: 1px;
+    border-color: var(--status-danger-border);
+    background-color: var(--status-danger-bg);
+    color: var(--status-danger);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .badge-status-warning {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: var(--radius-md);
+    border-width: 1px;
+    border-color: var(--status-warning-border);
+    background-color: var(--status-warning-bg);
+    color: var(--status-warning);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .badge-status-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: var(--radius-md);
+    border-width: 1px;
+    border-color: var(--status-info-border);
+    background-color: var(--status-info-bg);
+    color: var(--status-info);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .badge-status-neutral {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: var(--radius-md);
+    border-width: 1px;
+    border-color: var(--status-neutral-border);
+    background-color: var(--status-neutral-bg);
+    color: var(--status-neutral);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  /* Universal Widget Table Container */
+  .widget-table-container {
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background-color: var(--card);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+}
